@@ -1,0 +1,12 @@
+{
+  "name": "Kitchen Remodel",
+  "slug": "kitchen-remodel",
+  "description": "2025 kitchen renovation project",
+  "template": "gantt",
+  "created": "2025-01-08",
+  "features": {
+    "gantt": true,
+    "documents": true
+  },
+  "customPage": true
+}

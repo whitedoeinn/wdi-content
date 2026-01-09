@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= project.name %> - White Doe Inn</title>
+</head>
+<body class="min-h-screen bg-base-200">
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-lg">
+    <div class="flex-1">
+      <a href="/" class="btn btn-ghost text-xl">White Doe Inn</a>
+      <span class="text-base-content/50 mx-2">/</span>
+      <span class="font-semibold"><%= project.name %></span>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flex">
+    <% if (project.features.documents) { %>
+    <!-- Sidebar - Document Browser -->
+    <aside class="w-64 bg-base-100 min-h-[calc(100vh-4rem)] border-r border-base-300 p-4">
+      <h3 class="font-bold text-sm uppercase text-base-content/50 mb-3">Documents</h3>
+      <div id="document-browser" x-data="{ folders: [] }">
+        <p class="text-sm text-base-content/50">Loading...</p>
+      </div>
+    </aside>
+    <% } %>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+      <div class="prose max-w-none">
+        <h1><%= project.name %></h1>
+        <% if (project.description) { %>
+        <p class="lead"><%= project.description %></p>
+        <% } %>
+      </div>
+
+      <!-- Project content goes here -->
+      <div class="mt-6">
+        <%- content %>
+      </div>
+    </main>
+  </div>
+
+  <!-- Vite module script -->
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

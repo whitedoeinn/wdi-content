@@ -1,0 +1,14 @@
+{
+  "name": "Gantt",
+  "description": "Timeline/Gantt chart with task tracking and document browser",
+  "features": {
+    "gantt": {
+      "default": true,
+      "description": "Interactive Gantt chart for task scheduling"
+    },
+    "documents": {
+      "default": true,
+      "description": "File browser for reference materials"
+    }
+  }
+}

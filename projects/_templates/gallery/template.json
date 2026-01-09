@@ -1,0 +1,14 @@
+{
+  "name": "Gallery",
+  "description": "Document and image gallery with folder navigation",
+  "features": {
+    "documents": {
+      "default": true,
+      "description": "File browser for reference materials"
+    },
+    "gallery": {
+      "default": true,
+      "description": "Grid/list view of documents with previews"
+    }
+  }
+}

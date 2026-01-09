@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "create-project": "node scripts/create-project.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,15 @@
     "frappe-gantt": "^1.0.4"
   },
   "devDependencies": {
+    "@inquirer/prompts": "^8.1.0",
     "@tailwindcss/vite": "^4.1.18",
     "@types/alpinejs": "^3.13.11",
     "autoprefixer": "^10.4.23",
     "daisyui": "^5.5.14",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.3.3",
+    "glob": "^13.0.0",
+    "inquirer": "^13.1.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",

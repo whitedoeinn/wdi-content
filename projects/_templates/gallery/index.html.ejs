@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= project.name %> - White Doe Inn</title>
+</head>
+<body class="min-h-screen bg-base-200" x-data="{ viewType: 'grid' }">
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-lg">
+    <div class="flex-1">
+      <a href="/" class="btn btn-ghost text-xl">White Doe Inn</a>
+      <span class="text-base-content/50 mx-2">/</span>
+      <span class="font-semibold"><%= project.name %></span>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Header with view controls -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+      <div>
+        <h1 class="text-3xl font-bold"><%= project.name %></h1>
+        <% if (project.description) { %>
+        <p class="text-base-content/70"><%= project.description %></p>
+        <% } %>
+      </div>
+
+      <!-- View type switcher -->
+      <div class="join">
+        <button
+          class="btn join-item"
+          :class="viewType === 'grid' ? 'btn-primary' : 'btn-outline'"
+          @click="viewType = 'grid'"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+        </button>
+        <button
+          class="btn join-item"
+          :class="viewType === 'list' ? 'btn-primary' : 'btn-outline'"
+          @click="viewType = 'list'"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery container -->
+    <div class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <div id="gallery">
+          <p class="text-base-content/50">Loading documents...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Vite module script -->
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

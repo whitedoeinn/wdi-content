@@ -1,0 +1,10 @@
+{
+  "name": "Base",
+  "description": "Minimal template with navbar and document browser sidebar",
+  "features": {
+    "documents": {
+      "default": true,
+      "description": "File browser for reference materials"
+    }
+  }
+}
