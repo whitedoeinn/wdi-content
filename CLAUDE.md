@@ -156,3 +156,53 @@ import type { ProjectData, Task, Vendor, Receipt, Note } from './types/project-d
 - **Styling**: Most pages use DaisyUI; some (expense forms) use standalone CSS for print
 - **Alpine.js**: Available globally via `window.Alpine`
 - **Strict TypeScript**: Enabled with `noUnusedLocals`, `noUnusedParameters`
+
+## Claude Code Workflows
+
+This project uses the compound-engineering plugin for structured development workflows.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `/feature` | Full feature workflow: research → plan → work → review → compound |
+| `/commit` | Smart commit with tests, simplicity review, and changelog |
+| `/new-project` | Create a new project from template |
+
+### /feature Workflow
+
+Orchestrates the complete feature development cycle:
+
+1. **Research** - Smart-selects research agents based on feature context
+2. **Plan** - Creates GitHub Issue + local plan file with requirements
+3. **Work** - Feature branch, implementation, tests
+4. **Review** - Multi-agent code review (simplicity, architecture, security, performance)
+5. **Compound** - Merge, changelog, document learnings
+
+```bash
+/feature Add dark mode toggle          # Full interactive workflow
+/feature --yes Quick fix               # Auto-continue through phases
+/feature --plan-only New dashboard     # Stop after planning
+```
+
+### /commit Workflow
+
+Smart commit with quality gates:
+
+1. Stage changes (interactive or all)
+2. Run tests (pytest, npm test based on file types)
+3. Simplicity review (catches over-engineering)
+4. Generate commit message
+5. Update changelog (`docs/changelog.md`)
+6. Push
+
+```bash
+/commit                    # Interactive mode
+/commit --yes              # Auto-accept defaults
+/commit --yes --summary    # With fun changelog summary
+```
+
+### Plugins Required
+
+- `compound-engineering` - Research, review, and workflow agents
+- `frontend-design` - Production-grade UI generation
