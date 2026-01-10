@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "planning",
+      "name": "Planning & Permits",
+      "start": "2026-02-01",
+      "end": "2026-02-14",
+      "progress": 0
+    },
+    {
+      "id": "materials",
+      "name": "Order Materials",
+      "start": "2026-02-10",
+      "end": "2026-02-17",
+      "progress": 0,
+      "dependencies": ["planning"]
+    },
+    {
+      "id": "construction",
+      "name": "Deck Construction",
+      "start": "2026-02-17",
+      "end": "2026-03-07",
+      "progress": 0,
+      "dependencies": ["materials"]
+    }
+  ],
+  "vendors": [],
+  "receipts": [],
+  "notes": [],
+  "milestones": []
+}

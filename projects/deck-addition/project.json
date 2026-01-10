@@ -1,0 +1,12 @@
+{
+  "name": "Deck Addition",
+  "slug": "deck-addition",
+  "description": "Outdoor deck project",
+  "template": "gantt",
+  "created": "2026-01-09",
+  "features": {
+    "gantt": true,
+    "documents": true
+  },
+  "customPage": false
+}
